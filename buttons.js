@@ -7,17 +7,17 @@ const incrementAmt = 5,
       plusButton = document.querySelector('#btn-plus'),
       minusButton = document.querySelector('#btn-minus');
 
-/*      
+  
 // sets the border styling for the button
 function initializeButton() {
     percentageNumber.style.border = "thick solid #000000";
-    percentageNumber.style.borderRadius = '50px';
+    // percentageNumber.style.borderRadius = '50px';
     
 }
 
 // initialize button styles
 initializeButton(); 
-*/
+
 
 // JS way of adjusting percent annuity value
 percentageNumber.innerHTML = `${numberValue} %`;
@@ -31,7 +31,7 @@ function increment(num) {
           BORDER_TOP_RIGHT = 45,
           BORDER_BOT_RIGHT = 70,
           BORDER_BOT_LEFT = 95,
-          BORDER_EDGE_NUM = '50px';
+          BORDER_EDGE_NUM = '300px';
     
     
     // prevNum - html string value - convert it to a number
