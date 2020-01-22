@@ -1,3 +1,6 @@
+// FIXME -- progress bar package - would need to use require.js
+// let ProgressBar = require('progressbar.js');
+
 let percentageNumber = document.querySelector('.button--an-percentage')
     // initialize annuity percent value
     numberValue = 0;
@@ -10,7 +13,8 @@ const incrementAmt = 5,
   
 // sets the border styling for the button
 function initializeButton() {
-    percentageNumber.style.border = "thick solid #000000";
+    percentageNumber.style.border = "thick solid white";
+    // percentageNumber.style.border = "thick solid white";
     // percentageNumber.style.borderRadius = '50px';
     
 }
@@ -45,21 +49,36 @@ function increment(num) {
 
     }
 
-    if(num === BORDER_TOP_LEFT) {
-        percentageNumber.style.borderTopLeftRadius = BORDER_EDGE_NUM;
+
+    // FIXME semi-circle code looks good but not the same as figma/mockup
+    if(num === 45) {
+       percentageNumber.style.borderTopLeftRadius = BORDER_EDGE_NUM;
+       percentageNumber.style.borderLeftColor = 'black';
     }
 
-    if(num === BORDER_TOP_RIGHT) {
-        percentageNumber.style.borderTopRightRadius = BORDER_EDGE_NUM;
+    if(num === 95) {
+        percentageNumber.style.borderTopRightRadius = BORDER_EDGE_NUM; 
+        percentageNumber.style.borderRightColor = 'black';
+        percentageNumber.style.borderTopColor = 'black';
+        
     }
 
-    if(num === BORDER_BOT_RIGHT) {
-        percentageNumber.style.borderBottomRightRadius = BORDER_EDGE_NUM;
-    }
+    // // FIXME full-circle code but looks like a pill
+    // if(num === BORDER_TOP_LEFT) {
+    //     percentageNumber.style.borderTopLeftRadius = BORDER_EDGE_NUM;
+    // }
 
-    if(num === BORDER_BOT_LEFT) {
-        percentageNumber.style.borderBottomLeftRadius = BORDER_EDGE_NUM;
-    }
+    // if(num === BORDER_TOP_RIGHT) {
+    //     percentageNumber.style.borderTopRightRadius = BORDER_EDGE_NUM;
+    // }
+
+    // if(num === BORDER_BOT_RIGHT) {
+    //     percentageNumber.style.borderBottomRightRadius = BORDER_EDGE_NUM;
+    // }
+
+    // if(num === BORDER_BOT_LEFT) {
+    //     percentageNumber.style.borderBottomLeftRadius = BORDER_EDGE_NUM;
+    // }
 
     // initialize function variables 
     let newNum; // new number after adding the increment number
