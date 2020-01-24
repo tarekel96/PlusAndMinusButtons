@@ -1,6 +1,13 @@
 // FIXME -- progress bar package - would need to use require.js
 // let ProgressBar = require('progressbar.js');
 
+document.addEventListener('DOMContentLoaded', function () {
+    ToxProgress.create();
+    ToxProgress.animate();
+});
+
+console.log(ToxProgress)
+
 let percentageNumber = document.querySelector('.button--an-percentage')
     // initialize annuity percent value
     numberValue = 0;
