@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // increment function for the '+' sign
     function increment(num) {
+
+        // init vars that handle synch cap logic
+        let currentBar1Num = radialObj.current_value;
+        let currentBar2Num = radialObj2.current_value;
+        let combinedNum = currentBar1Num + currentBar2Num;
+
        
         console.log('increment')
     
@@ -50,8 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // prevNum - html string value - convert it to a number
         let prevNum = Number(num);   
-    
-        if(num === CAP) {        
+        
+        // ensures the 100 cap is not exceeded by combined bar percents
+        if((combinedNum) === CAP) {        
             // stringify number back to string data type        
             strDecimal = String(CAP);   
             return strDecimal;
@@ -81,11 +88,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // increment function for the '+' sign
     function decrement(num) {
+
+        // init vars that handle synch cap logic
+        let currentBar1Num = radialObj.current_value;
+        let currentBar2Num = radialObj2.current_value;
+        let combinedNum = currentBar1Num + currentBar2Num;
+
     
         // cap for the min that user can set
         const CAP = 0;
     
-        if(num === CAP) {    
+        // ensures the 0 cap is not passed by combined bar percents
+        if((combinedNum) === CAP) {    
             // stringify number back to string data type        
             strDecimal = String(CAP);   
             return strDecimal;    
