@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     ToxProgress.create();
     ToxProgress.animate();
-});
+
 
 console.log(ToxProgress)
 
@@ -18,16 +18,15 @@ const incrementAmt = 5,
       minusButton = document.querySelector('#btn-minus');
 
   
-// sets the border styling for the button
-function initializeButton() {
-    percentageNumber.style.border = "thick solid white";
-    // percentageNumber.style.border = "thick solid white";
-    // percentageNumber.style.borderRadius = '50px';
+// // sets the border styling for the button
+// function initializeButton() {
     
-}
+ 
+    
+// }
 
-// initialize button styles
-initializeButton(); 
+// // initialize button styles
+// initializeButton(); 
 
 
 // JS way of adjusting percent annuity value
@@ -35,14 +34,11 @@ percentageNumber.innerHTML = `${numberValue} %`;
 
 // increment function for the '+' sign
 function increment(num) {
+   
+    console.log('increment')
 
     // cap for the max that user can set
-    const CAP = 100,
-          BORDER_TOP_LEFT = 20,
-          BORDER_TOP_RIGHT = 45,
-          BORDER_BOT_RIGHT = 70,
-          BORDER_BOT_LEFT = 95,
-          BORDER_EDGE_NUM = '300px';
+    const CAP = 100
     
     
     // prevNum - html string value - convert it to a number
@@ -55,37 +51,6 @@ function increment(num) {
         return strDecimal;
 
     }
-
-
-    // FIXME semi-circle code looks good but not the same as figma/mockup
-    if(num === 45) {
-       percentageNumber.style.borderTopLeftRadius = BORDER_EDGE_NUM;
-       percentageNumber.style.borderLeftColor = 'black';
-    }
-
-    if(num === 95) {
-        percentageNumber.style.borderTopRightRadius = BORDER_EDGE_NUM; 
-        percentageNumber.style.borderRightColor = 'black';
-        percentageNumber.style.borderTopColor = 'black';
-        
-    }
-
-    // // FIXME full-circle code but looks like a pill
-    // if(num === BORDER_TOP_LEFT) {
-    //     percentageNumber.style.borderTopLeftRadius = BORDER_EDGE_NUM;
-    // }
-
-    // if(num === BORDER_TOP_RIGHT) {
-    //     percentageNumber.style.borderTopRightRadius = BORDER_EDGE_NUM;
-    // }
-
-    // if(num === BORDER_BOT_RIGHT) {
-    //     percentageNumber.style.borderBottomRightRadius = BORDER_EDGE_NUM;
-    // }
-
-    // if(num === BORDER_BOT_LEFT) {
-    //     percentageNumber.style.borderBottomLeftRadius = BORDER_EDGE_NUM;
-    // }
 
     // initialize function variables 
     let newNum; // new number after adding the increment number
@@ -137,3 +102,4 @@ minusButton.addEventListener('click', () => {
     percentageNumber.innerHTML = `${decrement(numberValue)} %`;
 })
 
+})
