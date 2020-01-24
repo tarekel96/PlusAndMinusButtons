@@ -1,18 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    let percentageNumber = document.querySelector('.button--an-percentage')
+    // let percentageNumber = document.querySelector('.button--an-percentage')
         // declare annuity percent value
         numberValue = 0;
         // on click increment value 
     const incrementAmt = 5,
           decrementAmt = -(incrementAmt);
-          plusButton = document.querySelector('#btn-plus'),
-          minusButton = document.querySelector('#btn-minus');
-
-
+          plusButton = document.querySelector('#btn-plus1'),
+          minusButton = document.querySelector('#btn-minus1');
     
     let radialObj = radialIndicator('#indicatorContainer', {
+        barColor : '#87CEEB',
+        barWidth : 10,
+        initValue : 0,
+        percentage: true
+    });
+
+    let radialObj2 = radialIndicator('#indicatorContainer2', {
         barColor : '#87CEEB',
         barWidth : 10,
         initValue : 0,
@@ -21,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
      
     // //Using Instance
     radialObj.animate(); 
+
+    // //Using Instance
+    radialObj2.animate(); 
 
     function updateBar(num) {
         return radialObj.animate(num);

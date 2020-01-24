@@ -9,31 +9,16 @@
     font-size: large;
 }
 
-.button--an-percentage {
-    font-size: xx-large;
-    padding: 3rem 1.5rem 3rem 1.5rem;
-    /* width: 100px; */
-    /* font-size: 16px; */
-    /* border-top-left-radius: 50px;
-    border-top-right-radius: 50px; */
-    /* border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px; */
-
+.main-columns {
+    /* width: 300px; */
+    margin: 5rem;
 }
 
-.columns {
-    width: 300px;
-    margin: 1rem 1.5rem 1rem 0;
+#column1 {
+    margin-right: 3rem;
 }
 
-#left-column {
-    text-align: right;
+#column2 {
+    margin-left: 3rem;
 }
 
-#middle-column {
-    text-align: center;
-}
-
-#right-column {
-    text-align: left;
-}
