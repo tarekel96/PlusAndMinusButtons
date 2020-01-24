@@ -3,37 +3,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let percentageNumber = document.querySelector('.button--an-percentage')
         // declare annuity percent value
-        numberValue = null;
+        numberValue = 0;
         // on click increment value 
     const incrementAmt = 5,
           decrementAmt = -(incrementAmt);
           plusButton = document.querySelector('#btn-plus'),
           minusButton = document.querySelector('#btn-minus');
-    // let progressBar = ToxProgress.toxProgressBars[0];
-    //       console.log(progressBar)
-    
-    
-    // function initialize() {
-    //     // JS way of adjusting percent annuity value
-    //     percentageNumber.innerHTML = `${0} %`;
-    // }
-    
-    // initialize();
+
 
     
     let radialObj = radialIndicator('#indicatorContainer', {
         barColor : '#87CEEB',
         barWidth : 10,
-        initValue : 40
-    }); 
+        initValue : 0,
+        percentage: true
+    });
      
     // //Using Instance
-    radialObj.animate(60); 
-    
-    function updateNumber() {
-        // JS way of adjusting percent annuity value
-        return percentageNumber.innerHTML = `${numberValue} %`;
-        // console.log(percentageNumber.innerHTML = `${numberValue} %`)
+    radialObj.animate(); 
+
+    function updateBar(num) {
+        return radialObj.animate(num);
     }
     
     // increment function for the '+' sign
@@ -68,9 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // plus click handler
     plusButton.addEventListener('click', () => {
-        percentageNumber.innerHTML = `${increment(numberValue)} %`;
-        console.log(numberValue);
-        updateNumber();
+        updateBar(increment(radialObj.current_value));   
          
     })
     
@@ -104,10 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // plus click handler
     minusButton.addEventListener('click', () => {
-        percentageNumber.innerHTML = `${decrement(numberValue)} %`;
-        console.log(numberValue);
-        updateNumber();
-         
-    })
-    
+        updateBar(decrement(radialObj.current_value));   
+        })
     })
