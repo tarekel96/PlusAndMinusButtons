@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // on click increment value 
     const incrementAmt = 5,
           decrementAmt = -(incrementAmt);
-          plusButton = document.querySelector('#btn-plus1'),
-          minusButton = document.querySelector('#btn-minus1');
+          plusButton1 = document.querySelector('#btn-plus1'),
+          minusButton1 = document.querySelector('#btn-minus1'),
+          plusButton2 = document.querySelector('#btn-plus2'),
+          minusButton2 = document.querySelector('#btn-minus2');
     
     let radialObj = radialIndicator('#indicatorContainer', {
         barColor : '#87CEEB',
@@ -32,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateBar(num) {
         return radialObj.animate(num);
+    }
+
+    function updateBar2(num) {
+        return radialObj2.animate(num);
     }
     
     // increment function for the '+' sign
@@ -57,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let strDecimal; // variable needed to convert value back to decimal
         newNum = prevNum + incrementAmt;
         // resets the numberValue to update the HTML  
-        numberValue = newNum;
+        // numberValue = newNum;
         // stringify number back to string data type        
         strDecimal = String(newNum);   
         return strDecimal;
@@ -65,8 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     // plus click handler
-    plusButton.addEventListener('click', () => {
+    plusButton1.addEventListener('click', () => {
         updateBar(increment(radialObj.current_value));   
+         
+    })
+
+    // plus click handler
+    plusButton2.addEventListener('click', () => {
+        updateBar2(increment(radialObj2.current_value));   
          
     })
     
@@ -91,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let strDecimal; // variable needed to convert value back to decimal
         newNum = prevNum + decrementAmt;
         // resets the numberValue to update the HTML  
-        numberValue = newNum;
+        // numberValue = newNum;
         // stringify number back to string data type        
         strDecimal = String(newNum);   
         return strDecimal;
@@ -99,7 +111,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     // plus click handler
-    minusButton.addEventListener('click', () => {
+    minusButton1.addEventListener('click', () => {
         updateBar(decrement(radialObj.current_value));   
         })
+
+    minusButton2.addEventListener('click', () => {
+        updateBar2(decrement(radialObj2.current_value));   
+        })    
+
+
     })
+    
