@@ -1,36 +1,37 @@
-// FIXME -- progress bar package - would need to use require.js
-// let ProgressBar = require('progressbar.js');
-
 document.addEventListener('DOMContentLoaded', function () {
-    ToxProgress.create();
-    ToxProgress.animate();
 
-
-console.log(ToxProgress)
 
 let percentageNumber = document.querySelector('.button--an-percentage')
-    // initialize annuity percent value
-    numberValue = 0;
+    // declare annuity percent value
+    numberValue = null;
     // on click increment value 
 const incrementAmt = 5,
       decrementAmt = -(incrementAmt);
       plusButton = document.querySelector('#btn-plus'),
       minusButton = document.querySelector('#btn-minus');
-
-  
-// // sets the border styling for the button
-// function initializeButton() {
-    
- 
-    
-// }
-
-// // initialize button styles
-// initializeButton(); 
+// let progressBar = ToxProgress.toxProgressBars[0];
+//       console.log(progressBar)
 
 
-// JS way of adjusting percent annuity value
-percentageNumber.innerHTML = `${numberValue} %`;
+function initialize() {
+    // JS way of adjusting percent annuity value
+    percentageNumber.innerHTML = `${0} %`;
+}
+
+initialize();
+
+// sets the border styling for the button
+function updateBar() {
+    ToxProgress.create();
+    ToxProgress.toxProgressBars[0].progress = numberValue;
+    ToxProgress.animate();
+}
+
+function updateNumber() {
+    // JS way of adjusting percent annuity value
+    return percentageNumber.innerHTML = `${numberValue} %`;
+    // console.log(percentageNumber.innerHTML = `${numberValue} %`)
+}
 
 // increment function for the '+' sign
 function increment(num) {
@@ -44,12 +45,10 @@ function increment(num) {
     // prevNum - html string value - convert it to a number
     let prevNum = Number(num);   
 
-    if(num === CAP) {
-        
+    if(num === CAP) {        
         // stringify number back to string data type        
         strDecimal = String(CAP);   
         return strDecimal;
-
     }
 
     // initialize function variables 
@@ -67,6 +66,9 @@ function increment(num) {
 // plus click handler
 plusButton.addEventListener('click', () => {
     percentageNumber.innerHTML = `${increment(numberValue)} %`;
+    console.log(numberValue);
+    updateNumber();
+    updateBar(); 
 })
 
 // increment function for the '+' sign
@@ -100,6 +102,9 @@ function decrement(num) {
 // plus click handler
 minusButton.addEventListener('click', () => {
     percentageNumber.innerHTML = `${decrement(numberValue)} %`;
+    console.log(numberValue);
+    updateNumber();
+    updateBar(); 
 })
 
 })
